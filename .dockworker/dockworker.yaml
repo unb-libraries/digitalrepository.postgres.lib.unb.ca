@@ -12,7 +12,7 @@ dockworker:
       id: digitalrepository.postgres.lib.unb.ca
       slug: digitalrepository-postgres-lib-unb-ca
       short_slug: postgres
-      uuid: 3581
+      uuid: 3580
     framework:
       name: Postgres
       version: 15.15
