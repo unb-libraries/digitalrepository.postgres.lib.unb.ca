@@ -50,3 +50,4 @@ dockworker:
       push-branches:
         - dev
         - prod
+        - 15.x
