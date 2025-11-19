@@ -1,0 +1,15 @@
+services:
+  digitalrepository.postgres.lib.unb.ca:
+    build:
+      context: .
+    container_name: digitalrepository.postgres.lib.unb.ca
+    restart: unless-stopped
+    expose:
+      - "5432"
+    env_file:
+      - ./env/postgres.env
+    networks:
+      - digitalrepository.postgres.lib.unb.ca
+networks:
+  digitalrepository.postgres.lib.unb.ca:
+    name: digitalrepository.postgres.lib.unb.ca

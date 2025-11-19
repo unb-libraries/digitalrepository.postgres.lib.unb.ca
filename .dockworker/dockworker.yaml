@@ -1,0 +1,52 @@
+dockworker:
+  version: '6'
+  application:
+    name: Postgres instance for UNB Libraries' digital repository
+    uri: https://digitalrepository.postgres.lib.unb.ca
+    description: >
+      A Postgres instance for use with UNB Libraries' digital repository.
+    topics:
+      - postgres
+      - digitalrepository
+    identifiers:
+      id: digitalrepository.postgres.lib.unb.ca
+      slug: digitalrepository-postgres-lib-unb-ca
+      short_slug: postgres
+      uuid: 3581
+    framework:
+      name: Postgres
+      version: 15.15
+      startup_finished_marker: 'postgres: ready for connections'
+      endpoint:
+        name: http
+        port: 5432
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
+      - dev
+      - prod
+    deployments:
+      digitalrepository-postgres-lib-unb-ca:
+        default: true
+        managed: true
+        name: digitalrepository-postgres-lib-unb-ca
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: digitalrepository.postgres.lib.unb.ca
+    jira:
+      project_keys:
+        - IN
+    image:
+      name: ghcr.io/unb-libraries/digitalrepository.postgres.lib.unb.ca
+      parent: postgres:15-alpine
+      repository: GitHub
+      push-branches:
+        - dev
+        - prod
