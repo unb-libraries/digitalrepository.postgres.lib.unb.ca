@@ -15,7 +15,6 @@ jobs:
       image-name: "ghcr.io/unb-libraries/digitalrepository.postgres.lib.unb.ca"
       k8s-deployment-name: "digitalrepository-postgres-lib-unb-ca"
       platforms: linux/amd64
-      push-branches: '["dev","prod","15.x"]'
     secrets:
       KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_DATA }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
